@@ -8,7 +8,7 @@ Sources: Used our old homeworks of HurricaneRowData.java to help fill this out.
          the equals method. 
 		
 */ 
-public class Person {
+public class Person implements Comparable<Person> {
     
     //Private variables for information 
     private String name; 
@@ -22,13 +22,18 @@ public class Person {
         this.weight = weight; 
     } 
 
+    //Getters 
     public double getHeight() { 
         return height; 
     }
 
     public double getWeight() { 
         return weight; 
-    } 
+    }  
+
+    public String getName(){ 
+        return name; 
+    }
 
     public void setHeight(double height) { 
         this.height = height; 
@@ -42,7 +47,7 @@ public class Person {
     @Override 
     public String toString() { 
         return name + ", " + height + ", " + weight; 
-    } 
+    }
 
     //boolean to return true or false depending on the situation 
     @Override 
@@ -63,5 +68,10 @@ public class Person {
         Person p = (Person) o; 
 
         return name.equals(p.name) && height == p.height && weight == p.weight; 
-    } 
+    }  
+
+    @Override 
+    public int compareTo(Person p) { 
+        return name.compareTo(p.getName());  
+    }
 }

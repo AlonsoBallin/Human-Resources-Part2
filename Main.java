@@ -34,7 +34,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
-//Hello there 
+
 public class Main 
 {
 	public static void main(String[] args) 
@@ -45,8 +45,8 @@ public class Main
 		Person personTest = new Person("Mac", 168, 90); 
 		System.out.println(personTest); 
 
-		//PersonSet array 
-		PersonSet people = new PersonSet(); 
+		//PersonOrderedSet array to make it listed alphabetically 
+		PersonOrderedSet people = new PersonOrderedSet(); 
 
 		try { 
 		//To scan the file 

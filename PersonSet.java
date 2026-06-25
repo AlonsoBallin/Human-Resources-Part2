@@ -20,14 +20,15 @@ public class PersonSet implements PersonList {
         return people.get(index); 
     }
 
+    //toString method that makes a persons data into string 
     @Override 
     public String toString() { 
         String result = ""; 
 
-        for(Person p : people) { 
-            result += p + "\n"; 
+        for(int i = 0; i < people.size(); i++) { 
+            result += people.get(i) + "\n"; 
         } 
 
         return result; 
-    }
+    } 
 }
