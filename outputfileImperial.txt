@@ -1,0 +1,6 @@
+Name        Height(in.)    Weight(lbs.)
+Bowser           122.05         1600.83
+Luigi             62.20          183.02
+Mario             61.02          198.45
+Peach             72.05          132.30
+Toad              16.14           15.44

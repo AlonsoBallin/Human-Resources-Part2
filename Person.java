@@ -46,7 +46,7 @@ public class Person implements Comparable<Person> {
     //toString method that converts the information in readable string format 
     @Override 
     public String toString() { 
-        return String.format("%-8s %8.0f %8.0f",name, height, weight); 
+        return String.format("%-7s %15.2f %15.2f",name, height, weight); 
     }
 
     //boolean to return true or false depending on the situation 

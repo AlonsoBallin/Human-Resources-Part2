@@ -40,10 +40,11 @@ public class Main
 	public static void main(String[] args) 
 	{
 		
-		//Person test 
+		/*Person Test 
 		System.out.println(); 
 		Person personTest = new Person("Mac", 168, 90); 
 		System.out.println(personTest); 
+		*/
 
 		//PersonOrderedSet array to make it listed alphabetically 
 		PersonOrderedSet orderedPeople = new PersonOrderedSet(); 
@@ -76,29 +77,34 @@ public class Main
 
 			} 
 			
-			//Prints the list with no duplicates from the txt file 
-			System.out.println(orderedPeople); 
-			System.out.println();
-			System.out.println(imperialPeople); 
-
 			fileReader.close(); 
+			
+			//FileWriter to output the data onto a seperate txt file 
+			FileWriter outputOrdered = new FileWriter("outputfileOrdered.txt");
+			outputOrdered.write(String.format("%-7s %15s %15s\n",
+			"Name", "Height(cm)", "Weight(kg)")); 
+			outputOrdered.write(orderedPeople.toString()); 
+			outputOrdered.close(); 
+
+			FileWriter outputImperial = new FileWriter("outputfileImperial.txt"); 
+			outputImperial.write(String.format("%-7s %15s %15s\n",
+			"Name", "Height(in.)", "Weight(lbs.)")); 
+			outputImperial.write(imperialPeople.toString()); 
+			outputImperial.close();  
+
+			//Prints out list onto console 
+			System.out.printf("%-7s %15s %15s\n", 
+			"Name","Height(cm)","Weight(kg)");
+			System.out.println(orderedPeople); 
+			System.out.println(); 
+			System.out.printf("%-7s %15s %15s\n", 
+			"Name","Height(in.)","Weight(lbs.)");
+			System.out.println(imperialPeople);
+
 		}
 		catch (IOException e) { 
 			System.out.println("Error: Couldn't read file"); 
 		}
-		
-		
-		/*try
-		{	
-			FileWriter fileWriterOrder = new FileWriter("outputfile.txt");
-			fileWriterOrder.write("testing");
-			fileWriterOrder.close();
-		}
-		catch(IOException e)
-		{
-			e.printStackTrace();
-			System.out.println(e);
-			System.exit(1);
-		}*/
+	
 	}
 }
