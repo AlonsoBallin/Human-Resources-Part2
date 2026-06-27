@@ -1,3 +1,11 @@
+/* 
+Alonso Reyes Dominguez 
+06/20/2026 
+Purpose: Sorts the list of names in alphabetical order.  
+         
+Sources: Used the Collections.sort() talked about in the instructions. 
+*/
+
 import java.util.Collections;
 
 public class PersonOrderedSet extends PersonSet {

@@ -46,7 +46,8 @@ public class Main
 		System.out.println(personTest); 
 
 		//PersonOrderedSet array to make it listed alphabetically 
-		PersonOrderedSet people = new PersonOrderedSet(); 
+		PersonOrderedSet orderedPeople = new PersonOrderedSet(); 
+		PersonImperialSet imperialPeople = new PersonImperialSet(); 
 
 		try { 
 		//To scan the file 
@@ -66,13 +67,19 @@ public class Main
 				double height = fileReader.nextDouble();
 				double weight = fileReader.nextDouble();
 
-				Person p = new Person(name, height, weight); 
+				Person orderedPerson = new Person(name, height, weight); 
+				Person imperialPerson = new Person(name, height, weight); 
 
-				people.add(p);  
+				orderedPeople.add(orderedPerson); 
+				imperialPeople.add(imperialPerson); 
+
+
 			} 
 			
 			//Prints the list with no duplicates from the txt file 
-			System.out.println(people); 
+			System.out.println(orderedPeople); 
+			System.out.println();
+			System.out.println(imperialPeople); 
 
 			fileReader.close(); 
 		}
