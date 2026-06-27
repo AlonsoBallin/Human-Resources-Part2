@@ -80,13 +80,13 @@ public class Main
 			fileReader.close(); 
 			
 			//FileWriter to output the data onto a seperate txt file 
-			FileWriter outputOrdered = new FileWriter("outputfileOrdered.txt");
+			FileWriter outputOrdered = new FileWriter("hr_ordered_set_output.txt");
 			outputOrdered.write(String.format("%-7s %15s %15s\n",
 			"Name", "Height(cm)", "Weight(kg)")); 
 			outputOrdered.write(orderedPeople.toString()); 
 			outputOrdered.close(); 
 
-			FileWriter outputImperial = new FileWriter("outputfileImperial.txt"); 
+			FileWriter outputImperial = new FileWriter("hr_imperial_set_output.txt"); 
 			outputImperial.write(String.format("%-7s %15s %15s\n",
 			"Name", "Height(in.)", "Weight(lbs.)")); 
 			outputImperial.write(imperialPeople.toString()); 
