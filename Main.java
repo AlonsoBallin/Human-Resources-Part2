@@ -46,9 +46,8 @@ public class Main
 		System.out.println(personTest); 
 		*/
 
-		//PersonOrderedSet array to make it listed alphabetically 
-		PersonOrderedSet orderedPeople = new PersonOrderedSet(); 
-		PersonImperialSet imperialPeople = new PersonImperialSet(); 
+		//SortedTreeSet list 
+		SortedTreeSet people = null;  
 
 		try { 
 		//To scan the file 
@@ -62,24 +61,25 @@ public class Main
 			fileReader.next(); 
 			fileReader.next(); 
 		
-			//While loop to get the information and store in PersonSet. 
+			//While loop to get the information and store in people. 
 			while(fileReader.hasNext()) { 
 				String name = fileReader.next();
 				double height = fileReader.nextDouble();
 				double weight = fileReader.nextDouble();
 
-				Person orderedPerson = new Person(name, height, weight); 
-				Person imperialPerson = new Person(name, height, weight); 
+				Person person = new Person(name, height, weight); 
 
-				orderedPeople.add(orderedPerson); 
-				imperialPeople.add(imperialPerson); 
-
-
+				if(people == null) { 
+					people = new SortedTreeSet(person); 
+				} 
+				else { 
+					people.add(person); 
+				}
 			} 
 			
 			fileReader.close(); 
 			
-			//FileWriter to output the data onto a seperate txt file 
+			/*FileWriter to output the data onto a seperate txt file 
 			FileWriter outputOrdered = new FileWriter("hr_ordered_set_output.txt");
 			outputOrdered.write(String.format("%-7s %15s %15s\n",
 			"Name", "Height(cm)", "Weight(kg)")); 
@@ -100,8 +100,21 @@ public class Main
 			System.out.printf("%-7s %15s %15s\n", 
 			"Name","Height(in.)","Weight(lbs.)");
 			System.out.println(imperialPeople);
+			*/ 
+			
+			//Prints out list onto console 
+			System.out.printf("%-7s %15s %15s\n", 
+			"Name","Height(cm)","Weight(kg)"); 
+			System.out.println(people);  
 
-		}
+			//Prints out list onto txt file 
+			FileWriter output = new FileWriter("SortedTreeSet_output.txt"); 
+			output.write(String.format("%-7s %15s %15s\n",
+			"Name", "Height(cm)", "Weight(kg)"));
+			output.write(people.toString());
+			output.close(); 
+			
+		} 
 		catch (IOException e) { 
 			System.out.println("Error: Couldn't read file"); 
 		}

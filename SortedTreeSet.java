@@ -46,13 +46,14 @@ public class SortedTreeSet implements SortedTreeSetInterface
         this.right = right; 
     }
 
-    //add method to add person to the tree 
+    //add method to add person to the tree
+    @Override
     public void add(Person p) { 
         int compare = p.compareTo(person); 
 
         if(compare < 0) { 
             if(left == null) { 
-                left = new SortedTreeSet(person);
+                left = new SortedTreeSet(p);
             } 
             else { 
                 left.add(p); 
@@ -60,7 +61,7 @@ public class SortedTreeSet implements SortedTreeSetInterface
         } 
         else if(compare > 0) { 
             if(right == null) { 
-                right = new SortedTreeSet(person); 
+                right = new SortedTreeSet(p); 
             } 
             else { 
                 right.add(p); 
